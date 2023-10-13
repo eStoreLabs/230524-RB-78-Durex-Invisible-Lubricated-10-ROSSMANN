@@ -142,6 +142,15 @@
   }
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
 /*********************************************************************/
 /***************************** main styles ***************************/
 /*********************************************************************/
@@ -276,11 +285,11 @@ section {
   #es-durex.es-durex .es-kv__packshot {
     position: absolute;
     left: 49%;
-    top: 83%;
+    top: 76%;
     transform: translate(-50%, -50%);
   }
   #es-durex.es-durex .es-kv__img {
-    max-width: 230px;
+    max-width: 200px;
   }
 
   #es-durex.es-durex .es-kv__photo {
@@ -757,6 +766,7 @@ section {
   rotate: 90deg;
   width: 32px;
   height: 32px;
+  z-index: 1;
 }
 #es-durex.es-durex .es-tip__container {
   display: flex;
@@ -800,8 +810,6 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: pulse-animation 2s;
-  animation-delay: calc(2s * 0);
 }
 
 #es-durex.es-durex .es-info__chart-M {
@@ -810,8 +818,6 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: pulse-animation 2s;
-  animation-delay: calc(2s * 1);
 }
 #es-durex.es-durex .es-info__chart-L {
   display: block;
@@ -819,10 +825,21 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+#es-durex.es-durex .es-info__chart-container.animate .es-info__chart-S {
+  animation: pulse-animation 2s;
+  animation-delay: calc(2s * 0);
+}
+
+#es-durex.es-durex .es-info__chart-container.animate .es-info__chart-M {
+  animation: pulse-animation 2s;
+  animation-delay: calc(2s * 1);
+}
+
+#es-durex.es-durex .es-info__chart-container.animate .es-info__chart-L {
   animation: pulse-animation 2s;
   animation-delay: calc(2s * 2);
 }
-
 #es-durex.es-durex .es-info__size {
   display: flex;
   flex-direction: column;
@@ -934,10 +951,10 @@ section {
 /****************************** cross styles ***************************/
 #es-durex.es-durex .es-cross {
   text-align: center;
+  padding: 2rem;
   background-image: url(/assets/img/cross-bg.png);
   background-size: cover;
   background-position: center;
-  padding: 2rem;
 }
 
 #es-durex.es-durex .es-cross__title {
